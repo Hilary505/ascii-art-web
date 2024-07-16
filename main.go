@@ -102,7 +102,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
 // main starts the HTTP server.
 func main() {
-	log.Println("Server is starting...")
+	fmt.Println("Server is starting...")
 	http.HandleFunc("/", Handler)
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 

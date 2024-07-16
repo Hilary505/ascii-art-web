@@ -69,7 +69,6 @@ func ProcessInput(contents []string, input string) (strArt string) {
 	return strArt
 }
 
-
 func FindFile(input, font string) (string, int) {
 	var filename string
 	switch font {
