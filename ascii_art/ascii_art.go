@@ -69,19 +69,18 @@ func ProcessInput(contents []string, input string) (strArt string) {
 	return strArt
 }
 
-func FindFile( ) string {
-	fileName := "standard.txt"
-	if len(os.Args) == 3 {
-		fileName = os.Args[2]
-	}
-	
-	contents, err := GetFile(fileName)
-	if err != nil {
-		fmt.Println("Error opening file", err)
-		return  ""
-	}
 
-	input := os.Args[1]
-	
-	return  ProcessInput(contents, input)
+func FindFile(input, font string) (string, int) {
+	var filename string
+	switch font {
+	case "shadow":
+		filename = "shadow.txt"
+	case "standard":
+		filename = "standard.txt"
+	case "thinkertoy":
+		filename = "thinkertoy.txt"
+	default:
+		return "", 500
+	}
+	return filename, 200
 }
