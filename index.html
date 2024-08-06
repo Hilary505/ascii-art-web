@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,23 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ascii-art-web</title>
     <link rel="stylesheet" href="static/mystyle.css" type="text/css" />
-    <link rel="shortcut icon" href="#">
+    <script>
+        function customReset() {
+            // Clear the textarea
+            document.querySelector('textarea[name="input"]').value = '';
+            
+            // Reset the select to its default state
+            document.querySelector('select[name="font"]').selectedIndex = 0;
+        }
+    </script>
 </head>
-    <body>
-        <h1>ascii-art-web</h1>
-        <main>
-            <div   class="container">
+<body>
+    <h1>ascii-art-web</h1>
+    <main>
+        <div class="container">
             <form action="/" class="input-area" method="POST">
-               <textarea name="input" cols="50" rows="8"></textarea>
-            <br> <br>
-            <h4>Select fileName</h4>
-                <select name="font" class="cursor">.html
-                    <option value="standard">Standard</option>
-                    <option value="thinkertoy">Thinkertoy</option>
-                    <option value="shadow">Shadow</option>
+                <textarea name="input" cols="50" rows="8">{{.In}}</textarea>
+                <br><br>
+                <h4>Select fileName</h4>
+                <select name="font" class="cursor">
+                    <option value="standard" {{if eq .Font "standard"}}selected{{end}}>Standard</option>
+                    <option value="thinkertoy" {{if eq .Font "thinkertoy"}}selected{{end}}>Thinkertoy</option>
+                    <option value="shadow" {{if eq .Font "shadow"}}selected{{end}}>Shadow</option>
                 </select>
-                <br> <br>
+                <br><br>
                 <input type="submit" value="Submit" class="button">
+                <input type="button" value="Reset" class="button" onclick="customReset();">
             </form>
 
             <article class="form-output">
@@ -31,11 +39,10 @@
                     <pre class="output">{{.Out}}</pre>
                 </section>
             </article>
-             <br><br>
+            <br><br>
             <footer class="footer">
-                 designed @ hilaromondi and sbull
             </footer>
-            </main>
         </div>
-    </body>
+    </main>
+</body>
 </html>
