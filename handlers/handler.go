@@ -34,11 +34,12 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 			} 
 			t.Execute(w, ExecOutput{
                 In:   "",
-                Font: "standard", // default font
+                Font: "standard", 
                 Out:  "",
             })
 		case "POST":
-			if err := r.ParseForm(); err != nil {
+			if err := r.ParseForm(); 
+			err != nil {
 				w.WriteHeader(http.StatusBadRequest)
 				log.Printf("Error parsing form: %v", err)
 				return

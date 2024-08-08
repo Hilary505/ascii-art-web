@@ -11,7 +11,7 @@ func GetFile(filename string) ([]string, error) {
 	file, err := os.ReadFile(filename)
 	if err != nil {
 		fmt.Println("An error", err)
-		os.Exit(1)
+		return []string{}, err
 	}
 
 	if len(file) == 0 {

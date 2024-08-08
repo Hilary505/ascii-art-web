@@ -5,7 +5,7 @@ import (
 	"os" 
 	"strings"
 )
-
+// function that maps the inputstring to the banner
 func ProcessInput(contents []string, input string) (strArt string) {
 	count := 0
 	newInput := strings.Split(input, "\n")

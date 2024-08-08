@@ -21,19 +21,18 @@
     <main>
         <div class="container">
             <form action="/" class="input-area" method="POST">
-                <textarea name="input" cols="50" rows="8">{{.In}}</textarea>
+                <textarea name="input" cols="150" rows="5">{{.In}}</textarea>
                 <br><br>
                 <h4>Select fileName</h4>
                 <select name="font" class="cursor">
-                    <option value="standard" {{if eq .Font "standard"}}selected{{end}}>Standard</option>
-                    <option value="thinkertoy" {{if eq .Font "thinkertoy"}}selected{{end}}>Thinkertoy</option>
-                    <option value="shadow" {{if eq .Font "shadow"}}selected{{end}}>Shadow</option>
+                    <option value="standard" >Standard</option>
+                    <option value="thinkertoy">Thinkertoy</option>
+                    <option value="shadow">Shadow</option>
                 </select>
                 <br><br>
-                <input type="submit" value="Submit" class="button">
-                <input type="button" value="Reset" class="button" onclick="customReset();">
+                <input type="submit" value="submit" class="button">
+                <!-- <input type="button" value="Reset" class="button" onclick="customReset();">  -->
             </form>
-
             <article class="form-output">
                 <section class="out">
                     <pre class="output">{{.Out}}</pre>

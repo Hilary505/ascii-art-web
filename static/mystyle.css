@@ -9,16 +9,16 @@ h1 {
     text-align: center;
 }
 .button {
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 30px;
+    background-color: blue;
+    /* border: none; */
+    /* border-radius: 30px; */
     color: white;
-    height: 20px;
-    width: 80px;
+    height: 40px;
+    width: 650px;
 }
-.button:hover {
+/* .button:hover {
     background-color: darkgreen;
-}
+} */
 .input-area {
     background-color:#e6f7ff; 
     padding: 20px;
