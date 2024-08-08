@@ -65,6 +65,10 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 					internalServerError(w)
 					return
 				}
+				if len(contents) == 0 {
+					internalServerError(w)
+					return
+				}
 				output := a.ProcessInput(contents, input)
 				
 				ex := ExecOutput{

@@ -11,12 +11,12 @@ func GetFile(filename string) ([]string, error) {
 	file, err := os.ReadFile(filename)
 	if err != nil {
 		fmt.Println("An error", err)
-		return []string{}, err
+		return nil, err
 	}
 
 	if len(file) == 0 {
-		fmt.Println("Error: The banner file is empty")
-		os.Exit(1)
+		err := fmt.Errorf("file is empty")
+		return nil, err
 	}
 
 	myfile := string(file)
